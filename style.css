@@ -1,0 +1,35 @@
+.column {
+    height: 200px;
+    width: 300px;
+    border: 1px solid black;
+    display: flex;  
+    flex-direction: column-reverse;  
+    align-items: center;
+}
+
+#threeColumn {
+    display: flex;
+
+}
+
+.disk {
+    height: 20px;
+    border: 1px solid black;
+    
+}
+
+#long {
+    width: 200px;
+    background-color: red;
+
+}
+
+#mid {
+    width: 150px;
+    background-color: yellow;
+}
+
+#short {
+    width: 100px;
+    background-color: blue;
+}
