@@ -21,7 +21,7 @@ function selectDrop(column) {
         // else reset diskToMove
         if(diskToMove) {
             columnFrom = column
-            columnFrom.style.backgroundColor = "lightgreen";
+            columnFrom.style.backgroundColor = "lightyellow";
             selected = true;
         } else {
             diskToMove = '';
@@ -35,11 +35,20 @@ function selectDrop(column) {
         if (column.lastElementChild){
 
             // gather information on how long each disk is
-            let lowerDisk = column.lastElementChild.getAttribute('long')
-            let upperDisk = diskToMove.getAttribute('long');
+            let lowerDiskLength = column.lastElementChild.clientWidth
+            let upperDiskLength = diskToMove.clientWidth;
+            
+            // console.log(diskToMove.clientWidth);
 
-            if(lowerDisk > upperDisk) {
+            if(lowerDiskLength > upperDiskLength) {
                 column.appendChild(diskToMove);
+                
+            }
+
+            // checkWin
+            if(column.querySelectorAll(".disk").length === 3 && column !== columnOne) {
+                console.log('win')  
+                column.style.backgroundColor = 'green'
             }
             
         } else {
